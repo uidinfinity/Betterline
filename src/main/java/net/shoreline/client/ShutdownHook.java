@@ -1,7 +1,5 @@
 package net.shoreline.client;
 
-import net.shoreline.client.api.file.ClientConfiguration;
-
 public class ShutdownHook extends Thread {
 
     public ShutdownHook() {
