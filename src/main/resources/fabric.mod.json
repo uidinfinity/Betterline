@@ -12,6 +12,7 @@
     "homepage": "https://shorelineclient.net"
   },
   "license": "None",
+  "icon": "assets/shoreline/icon/client_icon.png",
   "environment": "*",
   "entrypoints": {
     "client": [

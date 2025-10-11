@@ -239,7 +239,6 @@ public class Modules {
             AUTO_FISH = (AutoFishModule) getRegisteredModule("autofish-module");
             AUTO_RECONNECT = (AutoReconnectModule) getRegisteredModule("autoreconnect-module");
             AUTO_RESPAWN = (AutoRespawnModule) getRegisteredModule("autorespawn-module");
-            AUTO_RESPAWN = (AutoRespawnModule) getRegisteredModule("autorespawn-module");
             BEACON_SELECTOR = (BeaconSelectorModule) getRegisteredModule("beaconselector-module");
             // BETTER_CHAT = (BetterChatModule) getRegisteredModule("betterchat-module");
             CHAT_NOTIFIER = (ChatNotifierModule) getRegisteredModule("chatnotifier-module");
