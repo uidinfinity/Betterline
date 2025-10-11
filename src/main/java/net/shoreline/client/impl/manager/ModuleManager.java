@@ -147,6 +147,7 @@ public class ModuleManager {
                 new SkeletonModule(),
                 new SkyboxModule(),
                 new ShadersModule(),
+                new ZoomModule(),
                 new TooltipsModule(),
                 new SearchModule(),
                 new TracersModule(),

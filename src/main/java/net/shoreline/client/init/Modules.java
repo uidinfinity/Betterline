@@ -133,6 +133,7 @@ public class Modules {
     public static HoleESPModule HOLE_ESP;
     public static NametagsModule NAMETAGS;
     public static NoRenderModule NO_RENDER;
+    public static ZoomModule ZOOM;
     public static NoRotateModule NO_ROTATE;
     public static NoWeatherModule NO_WEATHER;
     public static ParticlesModule PARTICLES;
@@ -235,6 +236,7 @@ public class Modules {
             HOLE_FILL = (HoleFillModule) getRegisteredModule("holefill-module");
             BED_AURA = (BedAuraModule) getRegisteredModule("bedaura-module");
             NO_HIT_DELAY = (NoHitDelayModule) getRegisteredModule("nohitdelay-module");
+            ZOOM = (ZoomModule) getRegisteredModule("zoom-module");
             REPLENISH = (ReplenishModule) getRegisteredModule("replenish-module");
             SELF_BOW = (SelfBowModule) getRegisteredModule("selfbow-module");
             NEW_CHUNKS = (NewChunksModule) getRegisteredModule("newchunks-module");

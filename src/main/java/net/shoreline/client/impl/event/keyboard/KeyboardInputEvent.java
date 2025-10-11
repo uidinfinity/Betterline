@@ -3,10 +3,8 @@ package net.shoreline.client.impl.event.keyboard;
 import net.shoreline.client.api.event.Cancelable;
 import net.shoreline.client.api.event.Event;
 import net.shoreline.client.mixin.MixinKeyboard;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 /**
- * Dispatched in {@link MixinKeyboard#hookOnKey(long, int, int, int, int, CallbackInfo)}
  *
  * @author linus
  * @see MixinKeyboard
