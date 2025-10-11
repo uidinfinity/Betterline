@@ -7,6 +7,7 @@ package net.shoreline.client.api.event;
  * @since 1.0
  */
 public class StageEvent extends Event {
+    public static EventStage EventStage;
     // The current event stage which determines which segment of the event is
     // currently running.
     private EventStage stage;

@@ -28,8 +28,10 @@ public class Modules {
     public static ClickGuiModule CLICK_GUI;
     public static ColorsModule COLORS;
     public static HUDModule HUD;
+    public static AnticheatModule ANTCHEAT;
     public static RotationsModule ROTATIONS;
     public static BaritoneModule BARITONE;
+    public static SocialsModule SOCIALS;
     public static CapesModule CAPES;
     public static FontModule FONT;
     // Combat
@@ -240,9 +242,11 @@ public class Modules {
             SURROUND = (SurroundModule) getRegisteredModule("surround-module");
             TRIGGER = (TriggerModule) getRegisteredModule("trigger-module");
             ANTI_HUNGER = (AntiHungerModule) getRegisteredModule("antihunger-module");
+            SOCIALS = (SocialsModule) getRegisteredModule("socials-module");
             CHORUS_CONTROL = (ChorusControlModule) getRegisteredModule("choruscontrol-module");
             CLIENT_SPOOFER = (ClientSpoofModule) getRegisteredModule("clientspoof-module");
             CRASHER = (CrasherModule) getRegisteredModule("crasher-module");
+            AnticheatModule anticheat = AnticheatModule.getInstance();
             DISABLER = (DisablerModule) getRegisteredModule("disabler-module");
             EXTENDED_FIREWORK = (ExtendedFireworkModule) getRegisteredModule("extendedfirework-module");
             FAKE_LATENCY = (FakeLatencyModule) getRegisteredModule("fakelatency-module");

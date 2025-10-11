@@ -35,6 +35,7 @@ public class ModuleManager {
                 new ClickGuiModule(),
                 new ColorsModule(),
                 new ChatModule(),
+                new AnticheatModule(),
                 new ServerModule(),
                 new HUDModule(),
                 new RotationsModule(),
@@ -166,7 +167,8 @@ public class ModuleManager {
                 new NoGlitchBlocksModule(),
                 new ScaffoldModule(),
                 new AutoTunnelModule(),
-                new SpeedmineModule()
+                new SpeedmineModule(),
+                new SocialsModule()
                 // new WallhackModule()
         );
         if (ShorelineMod.isBaritonePresent()) {
