@@ -36,7 +36,7 @@ public class AnticheatModule extends ConcurrentModule {
     private float pitch = Float.NaN;
 
     public AnticheatModule() {
-        super("Anticheat", "Settings for anticheat configs", ModuleCategory.CLIENT);
+        super("AntiCheat", "Settings for anticheat configs", ModuleCategory.CLIENT);
         INSTANCE = this;
 
         modeConfig = new EnumConfig<>("Mode", "Applies anticheat optimizations", Anticheats.VANILLA, Anticheats.values());
