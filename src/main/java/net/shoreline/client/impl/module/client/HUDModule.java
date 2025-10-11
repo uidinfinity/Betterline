@@ -34,7 +34,6 @@ import net.shoreline.client.util.string.EnumFormatter;
 
 import java.awt.*;
 import java.text.DecimalFormat;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -44,9 +43,7 @@ import java.util.stream.Stream;
  */
 public class HUDModule extends ToggleModule {
 
-    //
     // private static final HudScreen HUD_SCREEN = new HudScreen();
-    //
     Config<Boolean> watermarkConfig = new BooleanConfig("Watermark", "Displays client name and version watermark", true);
     Config<Boolean> directionConfig = new BooleanConfig("Direction", "Displays facing direction", true);
     Config<Boolean> armorConfig = new BooleanConfig("Armor", "Displays player equipped armor and durability", true);
@@ -65,13 +62,14 @@ public class HUDModule extends ToggleModule {
     Config<Boolean> arraylistConfig = new BooleanConfig("Arraylist", "Displays a list of all active modules", true);
     Config<Ordering> orderingConfig = new EnumConfig<>("Ordering", "The ordering of the arraylist", Ordering.LENGTH, Ordering.values(), () -> arraylistConfig.getValue());
     Config<Rendering> renderingConfig = new EnumConfig<>("Rendering", "The rendering mode of the HUD", Rendering.UP, Rendering.values());
+    Config<Boolean> customWatermarkConfig = new BooleanConfig("CustomWatermark", "Use custom Betterline watermark", false);
     // Rainbow settings
     Config<RainbowMode> rainbowModeConfig = new EnumConfig<>("Rainbow", "The rendering mode for rainbow", RainbowMode.OFF, RainbowMode.values());
     Config<Float> rainbowSpeedConfig = new NumberConfig<>("Rainbow-Speed", "The speed for the rainbow color cycling", 0.1f, 50.0f, 100.0f);
     Config<Integer> rainbowSaturationConfig = new NumberConfig<>("Rainbow-Saturation", "The saturation of rainbow colors", 0, 35, 100);
     Config<Integer> rainbowBrightnessConfig = new NumberConfig<>("Rainbow-Brightness", "The brightness of rainbow colors", 0, 100, 100);
     Config<Float> rainbowDifferenceConfig = new NumberConfig<>("Rainbow-Difference", "The difference offset for rainbow colors", 0.1f, 40.0f, 100.0f);
-    //
+
     private final DecimalFormat decimal = new DecimalFormat("0.0");
 
     int rainbowOffset;
@@ -127,10 +125,16 @@ public class HUDModule extends ToggleModule {
                 topRight += 27.0f;
             }
             if (watermarkConfig.getValue()) {
-                RenderManager.renderText(event.getContext(), String.format("%s %s (%s%s)",
-                        ShorelineMod.MOD_NAME, ShorelineMod.MOD_VER,
-                        ShorelineMod.MOD_BUILD_NUMBER, !BuildConfig.HASH.equals("null") ? "-" + BuildConfig.HASH : ""), 2.0f, topLeft, getHudColor(rainbowOffset));
-                // topLeft += 9.0f;
+                String text;
+                if (customWatermarkConfig.getValue()) {
+                    text = "Betterline 1.0 (dev-6-9ad4b76)";
+                } else {
+                    text = String.format("%s %s (%s%s)",
+                            ShorelineMod.MOD_NAME, ShorelineMod.MOD_VER,
+                            ShorelineMod.MOD_BUILD_NUMBER,
+                            !BuildConfig.HASH.equals("null") ? "-" + BuildConfig.HASH : "");
+                }
+                RenderManager.renderText(event.getContext(), text, 2.0f, topLeft, getHudColor(rainbowOffset));
             }
             if (arraylistConfig.getValue()) {
                 List<Module> modules = Managers.MODULE.getModules();
@@ -354,7 +358,7 @@ public class HUDModule extends ToggleModule {
             case OFF -> Modules.COLORS.getRGB();
             case STATIC -> rainbow(1L);
             case GRADIENT -> rainbow(rainbowOffset);
-            // case ALPHA -> alpha(rainbowOffset);
+            case ALPHA -> alpha(rainbowOffset);
         };
     }
 
@@ -405,7 +409,7 @@ public class HUDModule extends ToggleModule {
     public enum RainbowMode {
         OFF,
         GRADIENT,
-        STATIC
-        // ALPHA
+        STATIC,
+        ALPHA
     }
 }

@@ -11,7 +11,7 @@ import net.shoreline.client.util.Globals;
  */
 public class ChatUtil implements Globals {
     //
-    private static final String PREFIX = "§s[Shoreline] §f";
+    private static final String PREFIX = "§d[Shoreline] §f"; // Исправлено: §s → §d
 
     /**
      * Sends a message in the {@link net.minecraft.client.gui.hud.ChatHud}
@@ -20,6 +20,7 @@ public class ChatUtil implements Globals {
      * @param message The message
      */
     public static void clientSendMessage(String message) {
+        if (mc.inGameHud == null) return; // Защита от NPE
         mc.inGameHud.getChatHud().addMessage(Text.of(PREFIX + message), null, null);
     }
 
@@ -35,6 +36,7 @@ public class ChatUtil implements Globals {
      * @param message
      */
     public static void clientSendMessageRaw(String message) {
+        if (mc.inGameHud == null) return;
         mc.inGameHud.getChatHud().addMessage(Text.of(message), null, null);
     }
 

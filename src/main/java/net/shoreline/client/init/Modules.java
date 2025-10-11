@@ -12,7 +12,7 @@ import net.shoreline.client.impl.module.misc.*;
 import net.shoreline.client.impl.module.movement.*;
 import net.shoreline.client.impl.module.render.*;
 import net.shoreline.client.impl.module.world.*;
-
+import java.awt.*;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -31,6 +31,7 @@ public class Modules {
     public static RotationsModule ROTATIONS;
     public static BaritoneModule BARITONE;
     public static CapesModule CAPES;
+    public static FontModule FONT;
     // Combat
     public static AuraModule AURA;
     public static AutoArmorModule AUTO_ARMOR;
@@ -90,6 +91,7 @@ public class Modules {
     // Movement
     public static AntiLevitationModule ANTI_LEVITATION;
     public static AutoWalkModule AUTO_WALK;
+    public static SneakModule SNEAK;
     public static ElytraFlyModule ELYTRA_FLY;
     public static EntityControlModule ENTITY_CONTROL;
     public static EntitySpeedModule ENTITY_SPEED;
@@ -115,6 +117,7 @@ public class Modules {
     public static BreakHighlightModule BREAK_HIGHLIGHT;
     public static ChamsModule CHAMS;
     public static ESPModule ESP;
+    public static CrosshairModule CROSSHAIR;
     public static ExtraTabModule EXTRA_TAB;
     public static FreecamModule FREECAM;
     public static FullbrightModule FULLBRIGHT;
@@ -190,6 +193,7 @@ public class Modules {
             HUD = (HUDModule) getRegisteredModule("hud-module");
             ROTATIONS = (RotationsModule) getRegisteredModule("rotations-module");
             SERVER = (ServerModule) getRegisteredModule("server-module");
+            FONT = (FontModule) getRegisteredModule("font-module");
             if (ShorelineMod.isBaritonePresent()) {
                 BARITONE = (BaritoneModule) getRegisteredModule("baritone-module");
             }
@@ -202,8 +206,9 @@ public class Modules {
             AUTO_TOTEM = (AutoTotemModule) getRegisteredModule("autototem-module");
             AUTO_TRAP = (AutoTrapModule) getRegisteredModule("autotrap-module");
             AUTO_XP = (AutoXPModule) getRegisteredModule("autoxp-module");
-            // BACK_TRACK = (BackTrackModule) getRegisteredModule("backtrack-module");
+            BACK_TRACK = (BackTrackModule) getRegisteredModule("backtrack-module");
             BLOCK_LAG = (BlockLagModule) getRegisteredModule("blocklag-module");
+            SNEAK = (SneakModule) getRegisteredModule("sneak-module");
             BOW_AIM = (BowAimModule) getRegisteredModule("bowaim-module");
             CRITICALS = (CriticalsModule) getRegisteredModule("criticals-module");
             HOLE_FILL = (HoleFillModule) getRegisteredModule("holefill-module");
@@ -234,6 +239,7 @@ public class Modules {
             AUTO_FISH = (AutoFishModule) getRegisteredModule("autofish-module");
             AUTO_RECONNECT = (AutoReconnectModule) getRegisteredModule("autoreconnect-module");
             AUTO_RESPAWN = (AutoRespawnModule) getRegisteredModule("autorespawn-module");
+            AUTO_RESPAWN = (AutoRespawnModule) getRegisteredModule("autorespawn-module");
             BEACON_SELECTOR = (BeaconSelectorModule) getRegisteredModule("beaconselector-module");
             // BETTER_CHAT = (BetterChatModule) getRegisteredModule("betterchat-module");
             CHAT_NOTIFIER = (ChatNotifierModule) getRegisteredModule("chatnotifier-module");
@@ -255,6 +261,7 @@ public class Modules {
             FAKE_LAG = (FakeLagModule) getRegisteredModule("fakelag-module");
             FAST_FALL = (FastFallModule) getRegisteredModule("fastfall-module");
             FLIGHT = (FlightModule) getRegisteredModule("flight-module");
+            CROSSHAIR = (CrosshairModule) getRegisteredModule("crosshair-module");
             ICE_SPEED = (IceSpeedModule) getRegisteredModule("icespeed-module");
             JESUS = (JesusModule) getRegisteredModule("jesus-module");
             LONG_JUMP = (LongJumpModule) getRegisteredModule("longjump-module");

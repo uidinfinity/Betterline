@@ -1,5 +1,6 @@
 package net.shoreline.client.api.module;
 
+import net.shoreline.client.impl.module.client.ChatModule;
 import net.shoreline.client.api.config.Config;
 import net.shoreline.client.api.config.setting.BooleanConfig;
 import net.shoreline.client.api.config.setting.MacroConfig;
@@ -100,26 +101,26 @@ public class ToggleModule extends Module implements Hideable {
 
     /**
      * Sets the module {@link #enabledConfig} state to <tt>true</tt>. Runs
-     * the {@link #onEnable()} callback.
+     * the {@link #onEnable()} callback and sends a notification.
      *
      * @see #onEnable()
-     * @see ToggleConfig#setValue(Boolean)
      */
     public void enable() {
         enabledConfig.setValue(true);
         onEnable();
+        ChatModule.sendToggleNotification(getName(), true);
     }
 
     /**
      * Sets the module {@link #enabledConfig} state to <tt>false</tt>. Runs
-     * the {@link #onDisable()} callback.
+     * the {@link #onDisable()} callback and sends a notification.
      *
      * @see #onDisable()
-     * @see ToggleConfig#setValue(Boolean)
      */
     public void disable() {
         enabledConfig.setValue(false);
         onDisable();
+        ChatModule.sendToggleNotification(getName(), false);
     }
 
     /**

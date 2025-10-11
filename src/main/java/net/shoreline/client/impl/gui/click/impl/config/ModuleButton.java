@@ -105,7 +105,9 @@ public class ModuleButton extends Button {
             scaledTime = 1.7f;
         }
         rectGradient(context, fill ? Modules.CLICK_GUI.getColor(scaledTime) : 0x555555, fill ? Modules.CLICK_GUI.getColor1(scaledTime) : 0x555555);
-        RenderManager.renderText(context, module.getName(), ix + 2, iy + 3.5f, scaledTime > 0.99f ? -1 : 0xaaaaaa);
+        int enabledColor = -1;
+        int disabledColor = Modules.CLICK_GUI.getDisabledTextColor();
+        RenderManager.renderText(context, module.getName(), ix + 2, iy + 3.5f, scaledTime > 0.99f ? enabledColor : disabledColor);
         if (settingsAnimation.getScaledTime() > 0.01f) {
             off = y + height + 1.0f;
             float fheight = 0.0f;

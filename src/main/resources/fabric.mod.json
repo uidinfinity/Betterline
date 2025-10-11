@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
-  "id": "shoreline",
+  "id": "betterline",
   "version": "${version}",
-  "name": "Shoreline",
-  "description": "",
+  "name": "Betterline",
+  "description": "A better version of Shoreline",
   "authors": [
+    "uidinfinity",
     "linus"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/"
+    "homepage": "https://shorelineclient.net"
   },
   "license": "None",
-  "icon": "assets/shoreline/icon/client_icon.png",
   "environment": "*",
   "entrypoints": {
     "client": [

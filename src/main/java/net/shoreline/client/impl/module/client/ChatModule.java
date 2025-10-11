@@ -1,22 +1,30 @@
 package net.shoreline.client.impl.module.client;
 
-import net.shoreline.client.api.config.Config;
 import net.shoreline.client.api.config.setting.BooleanConfig;
 import net.shoreline.client.api.module.ConcurrentModule;
 import net.shoreline.client.api.module.ModuleCategory;
+import net.shoreline.client.util.chat.ChatUtil;
+import net.minecraft.util.Formatting;
 
-/**
- * @author linus
- * @since 1.0
- */
 public class ChatModule extends ConcurrentModule {
-    //
-    Config<Boolean> debugConfig = new BooleanConfig("ChatDebug", "Allows client debug messages to be printed in the chat", false);
+    public static boolean notificationsEnabled = true;
 
-    /**
-     *
-     */
     public ChatModule() {
-        super("Chat", "Manages the client chat", ModuleCategory.CLIENT);
+        super("Chat", "Client chat manager", ModuleCategory.CLIENT);
+        BooleanConfig notifyConfig = new BooleanConfig("Notifications", "Toggle module notifications", true) {
+            @Override
+            public void setValue(Boolean value) {
+                super.setValue(value);
+                notificationsEnabled = value;
+            }
+        };
+        register(notifyConfig);
+        notificationsEnabled = notifyConfig.getValue();
+    }
+
+    public static void sendToggleNotification(String moduleName, boolean enabled) {
+        if (!notificationsEnabled) return;
+        String state = enabled ? Formatting.GREEN + "enabled" : Formatting.RED + "disabled";
+        ChatUtil.clientSendMessage("%s §7has been %s§7.", moduleName, state);
     }
 }
