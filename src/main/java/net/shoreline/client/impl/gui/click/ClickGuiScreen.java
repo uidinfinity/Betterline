@@ -2,7 +2,6 @@ package net.shoreline.client.impl.gui.click;
 
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.util.InputUtil;
 import net.minecraft.text.Text;
 import net.shoreline.client.api.module.ModuleCategory;
 import net.shoreline.client.impl.gui.click.component.ScissorStack;
@@ -149,9 +148,9 @@ public class ClickGuiScreen extends Screen implements Globals {
      */
     @Override
     public boolean mouseScrolled(double mouseX, double mouseY, double horizontalAmount, double verticalAmount) {
-        if (focus != null)
-        {
-            focus.setPos(focus.getX(), (float) (focus.getY() + verticalAmount * 50f));
+        float scrollAmount = (float) (verticalAmount * 50f);
+        for (CategoryFrame frame : frames) {
+            frame.setPos(frame.getX(), frame.getY() + scrollAmount);
         }
         return super.mouseScrolled(mouseX, mouseY, horizontalAmount, verticalAmount);
     }
