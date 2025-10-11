@@ -1,4 +1,1 @@
-old copy of shoreline repository
-
-bind: rshift
-prefix: .
+A better version of Shoreline
