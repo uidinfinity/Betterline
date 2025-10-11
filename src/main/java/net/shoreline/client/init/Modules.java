@@ -38,6 +38,7 @@ public class Modules {
     public static AutoBowReleaseModule AUTO_BOW_RELEASE;
     public static AutoCrystalModule AUTO_CRYSTAL;
     public static AutoLogModule AUTO_LOG;
+    public static BedAuraModule BED_AURA;
     public static AutoTotemModule AUTO_TOTEM;
     public static AutoTrapModule AUTO_TRAP;
     public static AutoXPModule AUTO_XP;
@@ -54,6 +55,7 @@ public class Modules {
     public static TriggerModule TRIGGER;
     // Exploit
     public static AntiHungerModule ANTI_HUNGER;
+    public static FastEatModule FAST_EAT;
     public static ChorusControlModule CHORUS_CONTROL;
     public static ClientSpoofModule CLIENT_SPOOFER;
     public static CrasherModule CRASHER;
@@ -64,6 +66,7 @@ public class Modules {
     public static PacketCancelerModule PACKET_CANCELER;
     public static PacketFlyModule PACKET_FLY;
     public static PhaseModule PHASE;
+    public static NewChunksModule NEW_CHUNKS;
     public static PortalGodModeModule PORTAL_GOD_MODE;
     public static ReachModule REACH;
     // Misc
@@ -71,6 +74,9 @@ public class Modules {
     public static NoPacketKickModule ANTI_BOOK_BAN;
     public static AntiSpamModule ANTI_SPAM;
     public static AutoAcceptModule AUTO_ACCEPT;
+    public static SpammerModule SPAMMER;
+    public static AntiAFKModule ANTI_AFK;
+    public static AutoMapartModule AUTO_MAPART;
     public static AutoEatModule AUTO_EAT;
     public static AutoFishModule AUTO_FISH;
     public static AutoReconnectModule AUTO_RECONNECT;
@@ -132,10 +138,14 @@ public class Modules {
     public static SkyboxModule SKYBOX;
     public static TooltipsModule TOOLTIPS;
     public static TracersModule TRACERS;
+    public static BreadcrumbsModule BREADCRUMBS;
     public static TrueSightModule TRUE_SIGHT;
     public static ViewClipModule VIEW_CLIP;
+    public static SearchModule SEARCH;
     public static ViewModelModule VIEW_MODEL;
-    // public static WaypointsModule WAYPOINTS;
+    public static ShadersModule SHADERS;
+    public static TrajectoriesModule TRAJECTORIES;
+     public static WaypointsModule WAYPOINTS;
     // World
     public static AntiInteractModule ANTI_INTERACT;
     public static AutoMineModule AUTO_MINE;
@@ -147,6 +157,7 @@ public class Modules {
     public static MultitaskModule MULTITASK;
     public static NoGlitchBlocksModule NO_GLITCH_BLOCKS;
     public static ScaffoldModule SCAFFOLD;
+    public static AutoTunnelModule AUTO_TUNNEL;
     public static SpeedmineModule SPEEDMINE;
     // The initialized state of the modules. Once this is true, all modules
     // have been initialized and the init process is complete. As a general
@@ -199,22 +210,32 @@ public class Modules {
             }
             CAPES = (CapesModule) getRegisteredModule("capes-module");
             AURA = (AuraModule) getRegisteredModule("aura-module");
+            TRAJECTORIES = (TrajectoriesModule) getRegisteredModule("trajectories-module");
+            ANTI_AFK = (AntiAFKModule) getRegisteredModule("antiafk-module");
             AUTO_ARMOR = (AutoArmorModule) getRegisteredModule("autoarmor-module");
             AUTO_BOW_RELEASE = (AutoBowReleaseModule) getRegisteredModule("autobowrelease-module");
+            SPAMMER = (SpammerModule) getRegisteredModule("spammer-module");
             AUTO_CRYSTAL = (AutoCrystalModule) getRegisteredModule("autocrystal-module");
             AUTO_LOG = (AutoLogModule) getRegisteredModule("autolog-module");
+            AUTO_TUNNEL = (AutoTunnelModule) getRegisteredModule("autotunnel-module");
+            AUTO_MAPART = (AutoMapartModule) getRegisteredModule("automapart-module");
             AUTO_TOTEM = (AutoTotemModule) getRegisteredModule("autototem-module");
             AUTO_TRAP = (AutoTrapModule) getRegisteredModule("autotrap-module");
             AUTO_XP = (AutoXPModule) getRegisteredModule("autoxp-module");
             BACK_TRACK = (BackTrackModule) getRegisteredModule("backtrack-module");
+            SEARCH = (SearchModule) getRegisteredModule("search-module");
             BLOCK_LAG = (BlockLagModule) getRegisteredModule("blocklag-module");
             SNEAK = (SneakModule) getRegisteredModule("sneak-module");
+            BREADCRUMBS = (BreadcrumbsModule) getRegisteredModule("breadcrumbs-module");
             BOW_AIM = (BowAimModule) getRegisteredModule("bowaim-module");
+            SHADERS = (ShadersModule) getRegisteredModule("shaders-module");
             CRITICALS = (CriticalsModule) getRegisteredModule("criticals-module");
             HOLE_FILL = (HoleFillModule) getRegisteredModule("holefill-module");
+            BED_AURA = (BedAuraModule) getRegisteredModule("bedaura-module");
             NO_HIT_DELAY = (NoHitDelayModule) getRegisteredModule("nohitdelay-module");
             REPLENISH = (ReplenishModule) getRegisteredModule("replenish-module");
             SELF_BOW = (SelfBowModule) getRegisteredModule("selfbow-module");
+            NEW_CHUNKS = (NewChunksModule) getRegisteredModule("newchunks-module");
             SELF_TRAP = (SelfTrapModule) getRegisteredModule("selftrap-module");
             SURROUND = (SurroundModule) getRegisteredModule("surround-module");
             TRIGGER = (TriggerModule) getRegisteredModule("trigger-module");
@@ -227,6 +248,7 @@ public class Modules {
             FAKE_LATENCY = (FakeLatencyModule) getRegisteredModule("fakelatency-module");
             FAST_PROJECTILE = (FastProjectileModule) getRegisteredModule("fastprojectile-module");
             PACKET_CANCELER = (PacketCancelerModule) getRegisteredModule("packetcanceler-module");
+            FAST_EAT = (FastEatModule) getRegisteredModule("fasteat-module");
             PACKET_FLY = (PacketFlyModule) getRegisteredModule("packetfly-module");
             PHASE = (PhaseModule) getRegisteredModule("phase-module");
             PORTAL_GOD_MODE = (PortalGodModeModule) getRegisteredModule("portalgodmode-module");
@@ -296,7 +318,7 @@ public class Modules {
             TRUE_SIGHT = (TrueSightModule) getRegisteredModule("truesight-module");
             VIEW_CLIP = (ViewClipModule) getRegisteredModule("viewclip-module");
             VIEW_MODEL = (ViewModelModule) getRegisteredModule("viewmodel-module");
-            // WAYPOINTS = (WaypointsModule) getRegisteredModule("waypoints-module");
+             WAYPOINTS = (WaypointsModule) getRegisteredModule("waypoints-module");
             ANTI_INTERACT = (AntiInteractModule) getRegisteredModule("antiinteract-module");
             AUTO_MINE = (AutoMineModule) getRegisteredModule("automine-module");
             AUTO_TOOL = (AutoToolModule) getRegisteredModule("autotool-module");
