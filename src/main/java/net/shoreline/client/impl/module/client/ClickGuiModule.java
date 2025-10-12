@@ -2,6 +2,7 @@ package net.shoreline.client.impl.module.client;
 
 import net.minecraft.util.math.MathHelper;
 import net.shoreline.client.api.config.Config;
+import net.shoreline.client.api.config.setting.ColorConfig;
 import net.shoreline.client.api.config.setting.NumberConfig;
 import net.shoreline.client.api.module.ModuleCategory;
 import net.shoreline.client.api.module.ToggleModule;
@@ -20,13 +21,9 @@ import java.awt.*;
  */
 public class ClickGuiModule extends ToggleModule {
 
-    Config<Integer> hueConfig = new NumberConfig<>("Hue", "The hue of the primary color", 0, 0, 360);
-    Config<Integer> saturationConfig = new NumberConfig<>("Saturation", "The saturation of the primary color", 0, 50, 100);
-    Config<Integer> brightnessConfig = new NumberConfig<>("Brightness", "The brightness of the primary color", 0, 50, 100);
-    Config<Integer> hue1Config = new NumberConfig<>("Hue1", "The hue of the secondary color", 0, 0, 360);
-    Config<Integer> saturation1Config = new NumberConfig<>("Saturation1", "The saturation of the secondary color", 0, 50, 100);
-    Config<Integer> brightness1Config = new NumberConfig<>("Brightness1", "The brightness of the secondary color", 0, 50, 100);
-    Config<Integer> alphaConfig = new NumberConfig<>("Alpha", "The alpha of colors", 0, 100, 100);
+    Config<Color> primaryColorConfig = new ColorConfig("PrimaryColor", "The primary GUI color", new Color(255, 0, 0), false, false);
+    Config<Color> secondaryColorConfig = new ColorConfig("SecondaryColor", "The secondary GUI color", new Color(255, 100, 0), false, false);
+    Config<Integer> alphaConfig = new NumberConfig<>("Alpha", "The alpha of GUI colors", 200, 0, 255);
     Config<Integer> disabledHueConfig = new NumberConfig<>("DisabledHue", "Hue for disabled module text", 0, 0, 360);
     Config<Integer> disabledSaturationConfig = new NumberConfig<>("DisabledSaturation", "Saturation for disabled module text", 0, 0, 100);
     Config<Integer> disabledBrightnessConfig = new NumberConfig<>("DisabledBrightness", "Brightness for disabled module text", 0, 40, 100);
@@ -64,41 +61,29 @@ public class ClickGuiModule extends ToggleModule {
     }
 
     public int getColor() {
-        return ColorUtil.hslToColor(
-                hueConfig.getValue(),
-                saturationConfig.getValue(),
-                brightnessConfig.getValue(),
-                alphaConfig.getValue() / 100.0f
-        ).getRGB();
+        Color c = primaryColorConfig.getValue();
+        int a = alphaConfig.getValue();
+        return new Color(c.getRed(), c.getGreen(), c.getBlue(), a).getRGB();
     }
 
     public int getColor1() {
-        return ColorUtil.hslToColor(
-                hue1Config.getValue(),
-                saturation1Config.getValue(),
-                brightness1Config.getValue(),
-                alphaConfig.getValue() / 100.0f
-        ).getRGB();
+        Color c = secondaryColorConfig.getValue();
+        int a = alphaConfig.getValue();
+        return new Color(c.getRed(), c.getGreen(), c.getBlue(), a).getRGB();
     }
 
-    public int getColor(float alpha) {
-        float finalAlpha = MathHelper.clamp(alphaConfig.getValue() * alpha / 100.0f, 0.0f, 1.0f);
-        return ColorUtil.hslToColor(
-                hueConfig.getValue(),
-                saturationConfig.getValue(),
-                brightnessConfig.getValue(),
-                finalAlpha
-        ).getRGB();
+    public int getColor(float alphaMultiplier) {
+        Color c = primaryColorConfig.getValue();
+        int baseAlpha = alphaConfig.getValue();
+        int finalAlpha = (int) (baseAlpha * MathHelper.clamp(alphaMultiplier, 0.0f, 1.0f));
+        return new Color(c.getRed(), c.getGreen(), c.getBlue(), finalAlpha).getRGB();
     }
 
-    public int getColor1(float alpha) {
-        float finalAlpha = MathHelper.clamp(alphaConfig.getValue() * alpha / 100.0f, 0.0f, 1.0f);
-        return ColorUtil.hslToColor(
-                hue1Config.getValue(),
-                saturation1Config.getValue(),
-                brightness1Config.getValue(),
-                finalAlpha
-        ).getRGB();
+    public int getColor1(float alphaMultiplier) {
+        Color c = secondaryColorConfig.getValue();
+        int baseAlpha = alphaConfig.getValue();
+        int finalAlpha = (int) (baseAlpha * MathHelper.clamp(alphaMultiplier, 0.0f, 1.0f));
+        return new Color(c.getRed(), c.getGreen(), c.getBlue(), finalAlpha).getRGB();
     }
 
     public int getDisabledTextColor() {
