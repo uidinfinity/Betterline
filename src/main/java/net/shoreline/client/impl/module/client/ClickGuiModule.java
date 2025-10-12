@@ -2,6 +2,7 @@ package net.shoreline.client.impl.module.client;
 
 import net.minecraft.util.math.MathHelper;
 import net.shoreline.client.api.config.Config;
+import net.shoreline.client.api.config.setting.BooleanConfig;
 import net.shoreline.client.api.config.setting.ColorConfig;
 import net.shoreline.client.api.config.setting.NumberConfig;
 import net.shoreline.client.api.module.ModuleCategory;
@@ -24,13 +25,16 @@ public class ClickGuiModule extends ToggleModule {
     Config<Color> primaryColorConfig = new ColorConfig("PrimaryColor", "The primary GUI color", new Color(255, 0, 0), false, false);
     Config<Color> secondaryColorConfig = new ColorConfig("SecondaryColor", "The secondary GUI color", new Color(255, 100, 0), false, false);
     Config<Integer> alphaConfig = new NumberConfig<>("Alpha", "The alpha of GUI colors", 200, 0, 255);
+    Config<Boolean> rainbowConfig = new BooleanConfig("Rainbow", "Enable animated rainbow colors", false);
+    Config<Float> rainbowSpeedConfig = new NumberConfig<>("RainbowSpeed", "Rainbow animation speed", 1.0f, 0.1f, 5.0f);
+    Config<Boolean> backgroundConfig = new BooleanConfig("Background", "Draw GUI background", true);
+    Config<Color> backgroundColorConfig = new ColorConfig("BackgroundColor", "Background color", new Color(0, 0, 0, 100), true, false);
     Config<Integer> disabledHueConfig = new NumberConfig<>("DisabledHue", "Hue for disabled module text", 0, 0, 360);
     Config<Integer> disabledSaturationConfig = new NumberConfig<>("DisabledSaturation", "Saturation for disabled module text", 0, 0, 100);
     Config<Integer> disabledBrightnessConfig = new NumberConfig<>("DisabledBrightness", "Brightness for disabled module text", 0, 40, 100);
 
     public static ClickGuiScreen CLICK_GUI_SCREEN;
     private final Animation openCloseAnimation = new Animation(Easing.CUBIC_IN_OUT, 300);
-
     public float scaleConfig = 1.0f;
 
     public ClickGuiModule() {
@@ -61,18 +65,37 @@ public class ClickGuiModule extends ToggleModule {
     }
 
     public int getColor() {
+        if (rainbowConfig.getValue()) {
+            float hue = (System.currentTimeMillis() % 10000) / 10000f * rainbowSpeedConfig.getValue();
+            Color rainbow = Color.getHSBColor(hue % 1.0f, 0.8f, 0.9f);
+            int a = alphaConfig.getValue();
+            return new Color(rainbow.getRed(), rainbow.getGreen(), rainbow.getBlue(), a).getRGB();
+        }
         Color c = primaryColorConfig.getValue();
         int a = alphaConfig.getValue();
         return new Color(c.getRed(), c.getGreen(), c.getBlue(), a).getRGB();
     }
 
     public int getColor1() {
+        if (rainbowConfig.getValue()) {
+            float hue = (System.currentTimeMillis() % 10000) / 10000f * rainbowSpeedConfig.getValue() + 0.5f;
+            Color rainbow = Color.getHSBColor(hue % 1.0f, 0.7f, 0.85f);
+            int a = alphaConfig.getValue();
+            return new Color(rainbow.getRed(), rainbow.getGreen(), rainbow.getBlue(), a).getRGB();
+        }
         Color c = secondaryColorConfig.getValue();
         int a = alphaConfig.getValue();
         return new Color(c.getRed(), c.getGreen(), c.getBlue(), a).getRGB();
     }
 
     public int getColor(float alphaMultiplier) {
+        if (rainbowConfig.getValue()) {
+            float hue = (System.currentTimeMillis() % 10000) / 10000f * rainbowSpeedConfig.getValue();
+            Color rainbow = Color.getHSBColor(hue % 1.0f, 0.8f, 0.9f);
+            int baseAlpha = alphaConfig.getValue();
+            int finalAlpha = (int) (baseAlpha * MathHelper.clamp(alphaMultiplier, 0.0f, 1.0f));
+            return new Color(rainbow.getRed(), rainbow.getGreen(), rainbow.getBlue(), finalAlpha).getRGB();
+        }
         Color c = primaryColorConfig.getValue();
         int baseAlpha = alphaConfig.getValue();
         int finalAlpha = (int) (baseAlpha * MathHelper.clamp(alphaMultiplier, 0.0f, 1.0f));
@@ -80,6 +103,13 @@ public class ClickGuiModule extends ToggleModule {
     }
 
     public int getColor1(float alphaMultiplier) {
+        if (rainbowConfig.getValue()) {
+            float hue = (System.currentTimeMillis() % 10000) / 10000f * rainbowSpeedConfig.getValue() + 0.5f;
+            Color rainbow = Color.getHSBColor(hue % 1.0f, 0.7f, 0.85f);
+            int baseAlpha = alphaConfig.getValue();
+            int finalAlpha = (int) (baseAlpha * MathHelper.clamp(alphaMultiplier, 0.0f, 1.0f));
+            return new Color(rainbow.getRed(), rainbow.getGreen(), rainbow.getBlue(), finalAlpha).getRGB();
+        }
         Color c = secondaryColorConfig.getValue();
         int baseAlpha = alphaConfig.getValue();
         int finalAlpha = (int) (baseAlpha * MathHelper.clamp(alphaMultiplier, 0.0f, 1.0f));
@@ -93,6 +123,10 @@ public class ClickGuiModule extends ToggleModule {
                 disabledBrightnessConfig.getValue(),
                 1.0f
         ).getRGB();
+    }
+
+    public int getBackgroundColor() {
+        return backgroundColorConfig.getValue().getRGB();
     }
 
     public float getScale() {
