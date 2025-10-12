@@ -130,7 +130,6 @@ public class AnticheatModule extends ConcurrentModule {
         return webJumpFixConfig.getValue();
     }
 
-    // Сделаем enum public static для ясности
     public enum Anticheats {
         GRIM,
         N_C_P,
