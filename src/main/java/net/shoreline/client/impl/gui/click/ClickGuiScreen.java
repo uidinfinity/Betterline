@@ -65,6 +65,7 @@ public class ClickGuiScreen extends Screen implements Globals {
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
         for (CategoryFrame frame : frames) {
+            frame.setHovered(frame.isWithin(mouseX, mouseY));
             if (frame.isWithinTotal(mouseX, mouseY)) {
                 focus = frame;
             }
