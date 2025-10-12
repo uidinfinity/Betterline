@@ -45,6 +45,7 @@ public class HUDModule extends ToggleModule {
 
     // private static final HudScreen HUD_SCREEN = new HudScreen();
     Config<Boolean> watermarkConfig = new BooleanConfig("Watermark", "Displays client name and version watermark", true);
+    Config<Boolean> userInfoConfig = new BooleanConfig("UserInfo", "Displays user info like UID", true);
     Config<Boolean> directionConfig = new BooleanConfig("Direction", "Displays facing direction", true);
     Config<Boolean> armorConfig = new BooleanConfig("Armor", "Displays player equipped armor and durability", true);
     Config<VanillaHud> potionHudConfig = new EnumConfig<>("PotionHud", "Renders the Minecraft potion Hud", VanillaHud.HIDE, VanillaHud.values());
@@ -124,6 +125,7 @@ public class HUDModule extends ToggleModule {
                     && !mc.player.getStatusEffects().isEmpty()) {
                 topRight += 27.0f;
             }
+            float currentY = topLeft;
             if (watermarkConfig.getValue()) {
                 String text;
                 if (customWatermarkConfig.getValue()) {
@@ -134,7 +136,15 @@ public class HUDModule extends ToggleModule {
                             ShorelineMod.MOD_BUILD_NUMBER,
                             !BuildConfig.HASH.equals("null") ? "-" + BuildConfig.HASH : "");
                 }
-                RenderManager.renderText(event.getContext(), text, 2.0f, topLeft, getHudColor(rainbowOffset));
+                RenderManager.renderText(event.getContext(), text, 2.0f, currentY, getHudColor(rainbowOffset));
+                currentY += 9.0f;
+                rainbowOffset++;
+            }
+
+            if (userInfoConfig.getValue()) {
+                String userInfoText = "Uid: 1";
+                RenderManager.renderText(event.getContext(), userInfoText, 2.0f, currentY, getHudColor(rainbowOffset));
+                rainbowOffset++;
             }
             if (arraylistConfig.getValue()) {
                 List<Module> modules = Managers.MODULE.getModules();
