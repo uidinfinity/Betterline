@@ -156,8 +156,10 @@ public class Modules {
     public static AvoidModule AVOID;
     public static BlockInteractModule BLOCK_INTERACT;
     public static FastDropModule FAST_DROP;
+    public static XRayModule XRAY;
     public static FastPlaceModule FAST_PLACE;
     public static MultitaskModule MULTITASK;
+
     public static NoGlitchBlocksModule NO_GLITCH_BLOCKS;
     public static ScaffoldModule SCAFFOLD;
     public static AutoTunnelModule AUTO_TUNNEL;
@@ -213,6 +215,7 @@ public class Modules {
             }
             CAPES = (CapesModule) getRegisteredModule("capes-module");
             AURA = (AuraModule) getRegisteredModule("aura-module");
+            XRAY = (XRayModule) getRegisteredModule("xray-module");
             TRAJECTORIES = (TrajectoriesModule) getRegisteredModule("trajectories-module");
             ANTI_AFK = (AntiAFKModule) getRegisteredModule("antiafk-module");
             AUTO_ARMOR = (AutoArmorModule) getRegisteredModule("autoarmor-module");

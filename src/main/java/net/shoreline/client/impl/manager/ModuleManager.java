@@ -159,6 +159,7 @@ public class ModuleManager {
                 // World
                 new AntiInteractModule(),
                 new AutoMineModule(),
+                new XRayModule(),
                 new AutoToolModule(),
                 new AvoidModule(),
                 new BlockInteractModule(),
