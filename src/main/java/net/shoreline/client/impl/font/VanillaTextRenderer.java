@@ -13,7 +13,6 @@ import net.shoreline.client.mixin.accessor.AccessorTextRenderer;
 import net.shoreline.client.util.Globals;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Matrix4f;
-
 import java.util.List;
 
 @Deprecated

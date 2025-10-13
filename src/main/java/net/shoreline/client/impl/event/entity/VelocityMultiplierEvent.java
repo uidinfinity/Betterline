@@ -11,7 +11,7 @@ import net.shoreline.client.api.event.Event;
  */
 @Cancelable
 public class VelocityMultiplierEvent extends Event {
-    //
+
     private final BlockState state;
 
     /**

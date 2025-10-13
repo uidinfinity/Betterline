@@ -9,7 +9,7 @@ import net.shoreline.client.api.event.Event;
  * @since 1.0
  */
 public class ConsumeItemEvent extends Event {
-    //
+
     private final ItemStack activeItemStack;
 
     public ConsumeItemEvent(ItemStack activeItemStack) {

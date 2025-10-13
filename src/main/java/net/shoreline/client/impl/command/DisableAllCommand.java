@@ -13,9 +13,7 @@ import net.shoreline.client.util.chat.ChatUtil;
  * @since 1.0
  */
 public class DisableAllCommand extends Command {
-    /**
-     *
-     */
+
     public DisableAllCommand() {
         super("DisableAll", "Disables all enabled modules", literal("disableall"));
     }

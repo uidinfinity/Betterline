@@ -8,7 +8,6 @@ import net.shoreline.client.api.Identifiable;
 import net.shoreline.client.api.config.setting.*;
 import net.shoreline.client.api.macro.Macro;
 import net.shoreline.client.util.Globals;
-
 import java.awt.*;
 import java.lang.reflect.Field;
 import java.util.List;

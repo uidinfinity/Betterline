@@ -5,7 +5,6 @@ import net.minecraft.client.render.*;
 import net.minecraft.util.math.ColorHelper;
 import org.joml.Matrix4f;
 import org.lwjgl.opengl.GL11;
-
 import java.util.ArrayList;
 import java.util.List;
 

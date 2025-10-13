@@ -13,9 +13,6 @@ import net.shoreline.client.util.chat.ChatUtil;
  */
 public class HelpCommand extends Command {
 
-    /**
-     *
-     */
     public HelpCommand() {
         super("Help", "Displays command functionality", literal("help"));
     }

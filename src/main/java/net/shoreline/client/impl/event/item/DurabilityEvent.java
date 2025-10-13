@@ -5,7 +5,7 @@ import net.shoreline.client.api.event.Event;
 
 @Cancelable
 public class DurabilityEvent extends Event {
-    //
+
     private int damage;
 
     public DurabilityEvent(int damage) {

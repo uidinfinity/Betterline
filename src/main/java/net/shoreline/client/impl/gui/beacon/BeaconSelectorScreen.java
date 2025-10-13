@@ -16,17 +16,11 @@ public class BeaconSelectorScreen extends BeaconScreen {
         super(handler, inventory, title);
     }
 
-    /**
-     *
-     */
     @Override
     public void init() {
         super.init();
     }
 
-    /**
-     *
-     */
     @Override
     public void handledScreenTick() {
         super.handledScreenTick();

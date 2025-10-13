@@ -12,10 +12,8 @@ import net.shoreline.client.impl.gui.click.impl.config.setting.ConfigButton;
 import net.shoreline.client.impl.module.client.ClickGuiModule;
 import net.shoreline.client.util.Globals;
 import org.lwjgl.glfw.GLFW;
-
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
-
 import static org.lwjgl.glfw.GLFW.GLFW_KEY_R;
 import static org.lwjgl.glfw.GLFW.GLFW_MOD_CONTROL;
 
@@ -33,13 +31,13 @@ public class ClickGuiScreen extends Screen implements Globals {
     public static boolean MOUSE_RIGHT_HOLD;
     public static boolean MOUSE_LEFT_CLICK;
     public static boolean MOUSE_LEFT_HOLD;
-    //
+
     public static final ScissorStack SCISSOR_STACK = new ScissorStack();
     private final List<CategoryFrame> frames = new CopyOnWriteArrayList<>();
     private final ClickGuiModule module;
-    //
+
     private CategoryFrame focus;
-    //
+
     private boolean closeOnEscape = true;
 
     /**
@@ -184,13 +182,10 @@ public class ClickGuiScreen extends Screen implements Globals {
         return false;
     }
 
-    /**
-     *
-     */
     @Override
     public void close() {
         module.disable();
-        //
+
         MOUSE_LEFT_CLICK = false;
         MOUSE_LEFT_HOLD = false;
         MOUSE_RIGHT_CLICK = false;

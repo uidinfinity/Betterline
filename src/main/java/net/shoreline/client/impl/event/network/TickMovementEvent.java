@@ -9,7 +9,7 @@ import net.shoreline.client.api.event.Event;
  */
 @Cancelable
 public class TickMovementEvent extends Event {
-    //
+
     private int iterations;
 
     /**

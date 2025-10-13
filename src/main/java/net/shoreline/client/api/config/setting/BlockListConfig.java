@@ -2,7 +2,6 @@ package net.shoreline.client.api.config.setting;
 
 import net.minecraft.block.Block;
 import net.shoreline.client.api.config.Config;
-
 import java.util.Arrays;
 import java.util.List;
 

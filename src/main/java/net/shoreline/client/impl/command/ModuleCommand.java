@@ -4,11 +4,9 @@ import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import net.minecraft.command.CommandSource;
 import net.minecraft.item.Item;
-import net.minecraft.util.Formatting;
 import net.shoreline.client.api.command.Command;
 import net.shoreline.client.api.command.ConfigArgumentType;
 import net.shoreline.client.api.command.ItemArgumentType;
-import net.shoreline.client.api.command.PlayerArgumentType;
 import net.shoreline.client.api.config.Config;
 import net.shoreline.client.api.config.setting.ItemListConfig;
 import net.shoreline.client.api.macro.Macro;
@@ -16,7 +14,6 @@ import net.shoreline.client.api.module.Module;
 import net.shoreline.client.api.module.ToggleModule;
 import net.shoreline.client.util.KeyboardUtil;
 import net.shoreline.client.util.chat.ChatUtil;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -25,7 +22,7 @@ import java.util.List;
  * @since 1.0
  */
 public class ModuleCommand extends Command {
-    //
+
     private final Module module;
 
     /**

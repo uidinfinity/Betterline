@@ -11,7 +11,6 @@ import net.shoreline.client.api.account.type.impl.MicrosoftAccount;
 import net.shoreline.client.init.Managers;
 import net.shoreline.client.util.Globals;
 import net.shoreline.client.util.network.TextureDownloader;
-
 import static org.lwjgl.glfw.GLFW.GLFW_MOUSE_BUTTON_1;
 
 /**

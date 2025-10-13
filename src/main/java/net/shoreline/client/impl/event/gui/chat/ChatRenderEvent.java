@@ -10,7 +10,7 @@ import net.shoreline.client.api.event.Event;
  */
 @Cancelable
 public class ChatRenderEvent extends Event {
-    //
+
     private final DrawContext context;
     private final float x, y;
 

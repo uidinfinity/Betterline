@@ -8,7 +8,7 @@ import net.shoreline.client.api.event.Event;
  * @since 1.0
  */
 public class RenderWorldEvent extends Event {
-    //
+
     private final MatrixStack matrices;
     private final float tickDelta;
 

@@ -13,7 +13,7 @@ import net.shoreline.client.api.event.StageEvent;
 public class RenderTooltipEvent extends StageEvent {
     public final DrawContext context;
     private final ItemStack stack;
-    //
+
     private final int x, y;
 
     public RenderTooltipEvent(DrawContext context, ItemStack stack, int x, int y) {

@@ -13,7 +13,6 @@ import net.shoreline.client.api.account.type.impl.CrackedAccount;
 import net.shoreline.client.api.account.type.impl.MicrosoftAccount;
 import net.shoreline.client.impl.manager.client.AccountManager;
 import net.shoreline.client.init.Managers;
-
 import java.awt.*;
 import java.io.IOException;
 import java.net.URISyntaxException;

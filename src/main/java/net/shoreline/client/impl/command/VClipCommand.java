@@ -12,9 +12,7 @@ import net.shoreline.client.util.chat.ChatUtil;
  * @since 1.0
  */
 public class VClipCommand extends Command {
-    /**
-     *
-     */
+
     public VClipCommand() {
         super("VClip", "Vertically clips the player", literal("vclip"));
     }

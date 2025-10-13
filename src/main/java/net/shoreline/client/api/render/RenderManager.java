@@ -11,7 +11,6 @@ import net.shoreline.client.mixin.accessor.AccessorWorldRenderer;
 import net.shoreline.client.util.Globals;
 import org.joml.Matrix4f;
 import org.lwjgl.opengl.GL11;
-
 import static net.shoreline.client.api.render.RenderBuffers.*;
 
 /**
@@ -19,7 +18,7 @@ import static net.shoreline.client.api.render.RenderBuffers.*;
  * @since 1.0
  */
 public class RenderManager implements Globals {
-    //
+
     public static final Tessellator TESSELLATOR = RenderSystem.renderThreadTesselator();
     public static final BufferBuilder BUFFER = TESSELLATOR.getBuffer();
 

@@ -12,7 +12,6 @@ import net.shoreline.client.impl.gui.click.component.Button;
 import net.shoreline.client.impl.gui.click.impl.config.setting.*;
 import net.shoreline.client.init.Modules;
 import org.lwjgl.glfw.GLFW;
-
 import java.awt.*;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -25,12 +24,12 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public class ModuleButton extends Button {
     private final Module module;
-    //
+
     private final List<ConfigButton<?>> configComponents =
             new CopyOnWriteArrayList<>();
-    //
+
     private float off;
-    //
+
     private boolean open;
     private final Animation settingsAnimation = new Animation(Easing.CUBIC_IN_OUT, 200);
 

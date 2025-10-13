@@ -11,7 +11,7 @@ import net.shoreline.client.mixin.render.MixinLightmapTextureManager;
  */
 @Cancelable
 public class LightmapGammaEvent extends Event {
-    //
+
     private int gamma;
 
     /**

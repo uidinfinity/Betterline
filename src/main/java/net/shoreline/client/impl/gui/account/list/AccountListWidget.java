@@ -5,7 +5,6 @@ import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.widget.AlwaysSelectedEntryListWidget;
 import net.shoreline.client.api.account.type.MinecraftAccount;
 import net.shoreline.client.init.Managers;
-
 import java.util.List;
 import java.util.Objects;
 
@@ -34,11 +33,11 @@ public final class AccountListWidget extends AlwaysSelectedEntryListWidget<Accou
 
     @Override
     protected void renderList(DrawContext context, int mouseX, int mouseY, float delta) {
-        // i love this shit
+        // I love this shit
         List<AccountEntry> entries = children();
         if (searchFilter != null && !searchFilter.isEmpty()) {
             entries = entries.stream()
-                    // i know this looks bad... but hear me out -
+                    // I know this looks bad... but hear me out -
                     .filter((entry) -> entry.getAccount().username()
                             .toLowerCase()
                             .contains(searchFilter.toLowerCase()))

@@ -39,7 +39,7 @@ public class VanishCommand extends Command {
                             ChatUtil.error("No vanished entity!");
                             return 0;
                         }
-                        //
+
                         ((AccessorEntity) mount).hookUnsetRemoved();
                         mc.world.addEntity(mount);
                         mc.player.startRiding(mount, true);

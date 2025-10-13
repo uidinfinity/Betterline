@@ -13,7 +13,7 @@ import net.shoreline.client.api.event.Event;
  */
 @Cancelable
 public class RenderLivingEntityEvent extends Event {
-    //
+
     private final LivingEntity entity;
     private final EntityModel<?> model;
     private final MatrixStack matrices;

@@ -11,7 +11,7 @@ import net.shoreline.client.mixin.gui.hud.MixinInGameHud;
  * @since 1.0
  */
 public class RenderOverlayEvent extends Event {
-    //
+
     private final DrawContext context;
 
 
@@ -62,7 +62,7 @@ public class RenderOverlayEvent extends Event {
 
     @Cancelable
     public static class ItemName extends RenderOverlayEvent {
-        //
+
         private int x, y;
 
         /**

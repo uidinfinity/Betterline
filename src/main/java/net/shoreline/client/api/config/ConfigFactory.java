@@ -1,7 +1,6 @@
 package net.shoreline.client.api.config;
 
 import net.shoreline.client.Shoreline;
-
 import java.lang.reflect.Field;
 
 /**

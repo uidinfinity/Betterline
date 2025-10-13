@@ -5,7 +5,6 @@ import net.shoreline.client.api.event.Event;
 public final class JumpRotationEvent extends Event {
     private float yaw;
 
-
     public float getYaw() {
         return yaw;
     }

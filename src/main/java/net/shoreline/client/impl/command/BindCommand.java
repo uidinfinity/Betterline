@@ -16,9 +16,7 @@ import org.lwjgl.glfw.GLFW;
  * @since 1.0
  */
 public class BindCommand extends Command {
-    /**
-     *
-     */
+
     public BindCommand() {
         super("Bind", "Keybinds a module", literal("bind"));
     }

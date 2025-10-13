@@ -11,7 +11,7 @@ import net.shoreline.client.api.event.Event;
  */
 @Cancelable
 public class ParticleEvent extends Event {
-    //
+
     private final ParticleEffect particle;
 
     /**

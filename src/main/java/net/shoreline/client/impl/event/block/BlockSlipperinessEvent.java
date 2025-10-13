@@ -10,7 +10,7 @@ import net.shoreline.client.api.event.Event;
  */
 @Cancelable
 public class BlockSlipperinessEvent extends Event {
-    //
+
     private final Block block;
     private float slipperiness;
 

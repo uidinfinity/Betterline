@@ -2,7 +2,6 @@ package net.shoreline.client.api.render.shader;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import org.apache.commons.io.IOUtils;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;

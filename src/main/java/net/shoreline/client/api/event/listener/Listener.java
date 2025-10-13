@@ -4,7 +4,6 @@ import net.shoreline.client.Shoreline;
 import net.shoreline.client.api.Invokable;
 import net.shoreline.client.api.event.Event;
 import net.shoreline.client.api.event.handler.EventHandler;
-
 import java.lang.invoke.CallSite;
 import java.lang.invoke.LambdaMetafactory;
 import java.lang.invoke.MethodHandles;

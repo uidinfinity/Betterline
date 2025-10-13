@@ -1,13 +1,12 @@
 package net.shoreline.client.impl.gui.click.component;
 
 import net.minecraft.client.gui.ScreenRect;
-
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Objects;
 
 public class ScissorStack {
-    //
+
     private final Deque<ScreenRect> stack = new ArrayDeque<>();
 
     /**

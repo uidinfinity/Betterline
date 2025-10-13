@@ -28,9 +28,6 @@ public class PacketEvent extends Event {
         return packet;
     }
 
-    /**
-     *
-     */
     @Cancelable
     public static class Inbound extends PacketEvent {
 
@@ -49,12 +46,9 @@ public class PacketEvent extends Event {
         }
     }
 
-    /**
-     *
-     */
     @Cancelable
     public static class Outbound extends PacketEvent {
-        //
+
         private final boolean cached;
 
         /**

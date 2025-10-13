@@ -2,14 +2,12 @@ package net.shoreline.client.api.file;
 
 import com.google.gson.*;
 import net.shoreline.client.Shoreline;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
-
 import static org.apache.logging.log4j.core.util.IOUtils.EOF;
 
 /**

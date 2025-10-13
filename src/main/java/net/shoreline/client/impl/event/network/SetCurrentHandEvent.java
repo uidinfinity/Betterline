@@ -12,7 +12,7 @@ import net.shoreline.client.util.Globals;
  * @since 1.0
  */
 public class SetCurrentHandEvent extends Event implements Globals {
-    //
+
     private final Hand hand;
 
     public SetCurrentHandEvent(Hand hand) {

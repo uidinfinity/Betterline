@@ -14,7 +14,6 @@ import net.shoreline.client.init.Managers;
 import net.shoreline.client.init.Modules;
 import net.shoreline.client.util.string.EnumFormatter;
 import org.lwjgl.glfw.GLFW;
-
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 

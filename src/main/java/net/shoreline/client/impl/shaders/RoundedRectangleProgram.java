@@ -5,7 +5,6 @@ import net.shoreline.client.api.render.shader.Program;
 import net.shoreline.client.api.render.shader.Shader;
 import net.shoreline.client.api.render.shader.Uniform;
 import net.shoreline.client.util.Globals;
-
 import java.awt.*;
 
 import static org.lwjgl.opengl.GL20.*;

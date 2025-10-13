@@ -10,7 +10,6 @@ import net.shoreline.client.impl.module.misc.*;
 import net.shoreline.client.impl.module.movement.*;
 import net.shoreline.client.impl.module.render.*;
 import net.shoreline.client.impl.module.world.*;
-
 import java.util.*;
 
 /**
@@ -83,7 +82,6 @@ public class ModuleManager {
                 new AntiAimModule(),
                 new AutoMapartModule(),
                 new SpammerModule(),
-                //new AntiBookBanModule(),
                 new AntiSpamModule(),
                 new AutoAcceptModule(),
                 new AutoEatModule(),
@@ -91,10 +89,8 @@ public class ModuleManager {
                 new AutoReconnectModule(),
                 new AutoRespawnModule(),
                 new BeaconSelectorModule(),
-                // new BetterChatModule(),
                 new ChatNotifierModule(),
                 new ChestSwapModule(),
-                // new ChestStealerModule(),
                 new FakePlayerModule(),
                 new InvCleanerModule(),
                 new MiddleClickModule(),
@@ -172,7 +168,6 @@ public class ModuleManager {
                 new AutoTunnelModule(),
                 new SpeedmineModule(),
                 new SocialsModule()
-                // new WallhackModule()
         );
         if (ShorelineMod.isBaritonePresent()) {
             register(new BaritoneModule());
@@ -180,9 +175,6 @@ public class ModuleManager {
         Shoreline.info("Registered {} modules!", modules.size());
     }
 
-    /**
-     *
-     */
     public void postInit() {
         // TODO
     }

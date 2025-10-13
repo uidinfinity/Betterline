@@ -8,7 +8,7 @@ import net.shoreline.client.api.event.Event;
 
 @Cancelable
 public class InteractBlockEvent extends Event {
-    //
+
     private final ClientPlayerEntity player;
     private final Hand hand;
     private final BlockHitResult hitResult;

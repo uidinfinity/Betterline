@@ -11,7 +11,7 @@ import org.apache.commons.lang3.StringUtils;
  */
 @Cancelable
 public class ChatMessageEvent extends Event {
-    //
+
     private final String message;
 
     public ChatMessageEvent(String message) {

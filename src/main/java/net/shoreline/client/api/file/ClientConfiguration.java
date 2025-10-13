@@ -11,7 +11,6 @@ import net.shoreline.client.api.waypoint.WaypointFile;
 import net.shoreline.client.init.Managers;
 import net.shoreline.client.init.Modules;
 import net.shoreline.client.util.Globals;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;

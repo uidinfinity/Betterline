@@ -7,7 +7,6 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import net.shoreline.client.api.config.Config;
-
 import java.util.ArrayList;
 import java.util.List;
 

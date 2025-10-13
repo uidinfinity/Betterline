@@ -9,7 +9,7 @@ import net.shoreline.client.api.event.Event;
  */
 @Cancelable
 public class MovementPacketsEvent extends Event {
-    //
+
     private double x, y, z;
     private float yaw, pitch;
     private boolean onGround;

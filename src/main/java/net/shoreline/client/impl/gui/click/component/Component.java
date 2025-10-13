@@ -12,7 +12,6 @@ import net.shoreline.client.api.render.RenderManager;
 import net.shoreline.client.impl.gui.click.ClickGuiScreen;
 import net.shoreline.client.util.Globals;
 import org.joml.Matrix4f;
-
 import java.util.function.BiConsumer;
 
 /**

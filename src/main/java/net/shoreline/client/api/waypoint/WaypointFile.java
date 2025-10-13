@@ -6,7 +6,6 @@ import com.google.gson.JsonObject;
 import net.shoreline.client.Shoreline;
 import net.shoreline.client.api.file.ConfigFile;
 import net.shoreline.client.init.Managers;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -17,7 +16,7 @@ import java.nio.file.Path;
  * @since 1.0
  */
 public class WaypointFile extends ConfigFile {
-    //
+
     private final String serverIp;
 
     /**
@@ -59,9 +58,6 @@ public class WaypointFile extends ConfigFile {
         }
     }
 
-    /**
-     *
-     */
     @Override
     public void load() {
         try {

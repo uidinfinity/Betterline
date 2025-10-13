@@ -3,7 +3,6 @@ package net.shoreline.client.api.config.setting;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import net.shoreline.client.api.config.Config;
-
 import java.util.function.Supplier;
 
 /**

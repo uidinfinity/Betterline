@@ -9,7 +9,6 @@ import net.shoreline.client.impl.gui.click.impl.config.ModuleButton;
 import net.shoreline.client.init.Modules;
 import net.shoreline.client.util.string.EnumFormatter;
 import org.lwjgl.glfw.GLFW;
-
 import java.util.Arrays;
 
 /**

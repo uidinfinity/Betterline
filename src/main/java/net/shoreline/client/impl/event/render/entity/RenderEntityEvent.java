@@ -8,7 +8,6 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.LivingEntity;
 import net.shoreline.client.api.event.Cancelable;
 import net.shoreline.client.api.event.Event;
-
 import java.util.List;
 
 @Cancelable

@@ -12,9 +12,9 @@ import net.shoreline.client.mixin.render.entity.MixinPlayerEntityRenderer;
  */
 @Cancelable
 public class RenderPlayerEvent extends Event {
-    //
+
     private final AbstractClientPlayerEntity entity;
-    //
+
     private float yaw;
     private float pitch;
 

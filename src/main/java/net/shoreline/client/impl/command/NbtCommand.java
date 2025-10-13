@@ -7,9 +7,7 @@ import net.shoreline.client.api.command.Command;
 import net.shoreline.client.util.chat.ChatUtil;
 
 public class NbtCommand extends Command {
-    /**
-     *
-     */
+
     public NbtCommand() {
         super("Nbt", "Displays all nbt tags on the held item", literal("nbt"));
     }

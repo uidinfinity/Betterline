@@ -2,7 +2,6 @@ package net.shoreline.client.api.account.type.impl;
 
 import net.minecraft.client.session.Session;
 import net.shoreline.client.api.account.type.MinecraftAccount;
-
 import java.util.Optional;
 import java.util.UUID;
 

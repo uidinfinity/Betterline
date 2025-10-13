@@ -10,7 +10,6 @@ import net.shoreline.client.api.render.anim.Animation;
 import net.shoreline.client.api.render.anim.Easing;
 import net.shoreline.client.impl.event.config.ConfigUpdateEvent;
 import org.jetbrains.annotations.ApiStatus.Internal;
-
 import java.util.function.Supplier;
 
 /**

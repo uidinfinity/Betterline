@@ -28,7 +28,7 @@ public abstract class Program {
             initUniforms();
             isInitialisedUniforms = true;
         }
-        //
+
         updateUniforms();
     }
 

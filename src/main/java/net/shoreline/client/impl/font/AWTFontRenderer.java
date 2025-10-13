@@ -5,7 +5,6 @@ import net.shoreline.client.api.font.FontRenderer;
 import net.shoreline.client.api.font.Glyph;
 import net.shoreline.client.api.font.GlyphVisitor;
 import org.joml.Matrix4f;
-
 import java.awt.*;
 
 /**

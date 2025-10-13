@@ -5,7 +5,6 @@ import net.minecraft.command.CommandSource;
 import net.shoreline.client.Shoreline;
 import net.shoreline.client.api.command.Command;
 import net.shoreline.client.util.chat.ChatUtil;
-
 import java.awt.*;
 import java.io.IOException;
 
@@ -15,9 +14,6 @@ import java.io.IOException;
  */
 public class OpenFolderCommand extends Command {
 
-    /**
-     *
-     */
     public OpenFolderCommand() {
         super("OpenFolder", "Opens the client configurations folder", literal("openfolder"));
     }

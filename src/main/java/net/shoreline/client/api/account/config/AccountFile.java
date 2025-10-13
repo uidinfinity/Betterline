@@ -9,7 +9,6 @@ import net.shoreline.client.api.account.type.impl.CrackedAccount;
 import net.shoreline.client.api.account.type.impl.MicrosoftAccount;
 import net.shoreline.client.api.file.ConfigFile;
 import net.shoreline.client.init.Managers;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;

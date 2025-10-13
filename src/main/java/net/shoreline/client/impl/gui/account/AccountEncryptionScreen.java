@@ -50,7 +50,7 @@ public final class AccountEncryptionScreen extends Screen
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta)
     {
-        // wow this code is god awful
+        // WOW, this code is god awful
         super.render(context, mouseX, mouseY, delta);
 
         context.drawCenteredTextWithShadow(client.textRenderer,

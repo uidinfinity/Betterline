@@ -7,10 +7,10 @@ import net.minecraft.util.math.MathHelper;
  * @since 1.0
  */
 public class Animation {
-    //
+
     private final long animationTime;
     private final Easing easing;
-    //
+
     private long time;
     private boolean state;
 
