@@ -94,11 +94,9 @@ public class Managers {
 
     /**
      * Returns <tt>true</tt> if the Manager instances have been initialized.
-     * This should always return <tt>true</tt> if {@link Shoreline#preInit()} has
      * finished running.
      *
      * @return <tt>true</tt> if the Manager instances have been initialized
-     * @see Shoreline#preInit()
      * @see #init()
      * @see #initialized
      */

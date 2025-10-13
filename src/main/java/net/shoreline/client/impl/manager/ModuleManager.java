@@ -27,7 +27,7 @@ public class ModuleManager {
      * Initializes the module register.
      */
     public ModuleManager() {
-        // MAINTAIN ALPHABETICAL ORDER
+        // MAINTAIN ALPHABETICAL ORDER (dont)
         register(
                 // Client
                 new ServerModule(),

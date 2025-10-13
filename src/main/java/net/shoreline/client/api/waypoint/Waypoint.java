@@ -13,9 +13,9 @@ import net.shoreline.client.util.math.timer.Timer;
  * @since 1.0
  */
 public class Waypoint extends ConfigContainer implements Position {
-    //
+
     private final String ip;
-    //
+
     private final Config<Double> xConfig = new NumberConfig<>("X", "X " +
             "position of waypoint.", 0.0D, 0.0D, Double.MAX_VALUE);
     private final Config<Double> yConfig = new NumberConfig<>("Y", "Y " +
