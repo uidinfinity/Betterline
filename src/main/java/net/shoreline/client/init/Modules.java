@@ -42,6 +42,7 @@ public class Modules {
     public static AutoLogModule AUTO_LOG;
     public static BedAuraModule BED_AURA;
     public static AutoTotemModule AUTO_TOTEM;
+    public static ClickCrystalModule CLICK_CRYSTAL;
     public static AutoTrapModule AUTO_TRAP;
     public static AutoXPModule AUTO_XP;
     public static BackTrackModule BACK_TRACK;
@@ -227,6 +228,7 @@ public class Modules {
             AUTO_MAPART = (AutoMapartModule) getRegisteredModule("automapart-module");
             AUTO_TOTEM = (AutoTotemModule) getRegisteredModule("autototem-module");
             AUTO_TRAP = (AutoTrapModule) getRegisteredModule("autotrap-module");
+            CLICK_CRYSTAL = (ClickCrystalModule) getRegisteredModule("clickcrystal-module");
             AUTO_XP = (AutoXPModule) getRegisteredModule("autoxp-module");
             BACK_TRACK = (BackTrackModule) getRegisteredModule("backtrack-module");
             SEARCH = (SearchModule) getRegisteredModule("search-module");
