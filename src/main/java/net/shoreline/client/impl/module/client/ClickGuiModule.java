@@ -12,7 +12,6 @@ import net.shoreline.client.api.render.anim.Easing;
 import net.shoreline.client.impl.gui.click.ClickGuiScreen;
 import net.shoreline.client.util.render.ColorUtil;
 import org.lwjgl.glfw.GLFW;
-
 import java.awt.*;
 
 /**
@@ -27,6 +26,7 @@ public class ClickGuiModule extends ToggleModule {
     Config<Integer> alphaConfig = new NumberConfig<>("Alpha", "The alpha of GUI colors", 200, 0, 255);
     Config<Boolean> rainbowConfig = new BooleanConfig("Rainbow", "Enable animated rainbow colors", false);
     Config<Float> rainbowSpeedConfig = new NumberConfig<>("RainbowSpeed", "Rainbow animation speed", 1.0f, 0.1f, 5.0f);
+    Config<Boolean> useGradientConfig = new BooleanConfig("UseGradient", "Enable gradient effect in GUI", true);
     Config<Boolean> backgroundConfig = new BooleanConfig("Background", "Draw GUI background", true);
     Config<Color> backgroundColorConfig = new ColorConfig("BackgroundColor", "Background color", new Color(0, 0, 0, 100), true, false);
     Config<Integer> disabledHueConfig = new NumberConfig<>("DisabledHue", "Hue for disabled module text", 0, 0, 360);
@@ -77,6 +77,9 @@ public class ClickGuiModule extends ToggleModule {
     }
 
     public int getColor1() {
+        if (!useGradientConfig.getValue()) {
+            return getColor();
+        }
         if (rainbowConfig.getValue()) {
             float hue = (System.currentTimeMillis() % 10000) / 10000f * rainbowSpeedConfig.getValue() + 0.5f;
             Color rainbow = Color.getHSBColor(hue % 1.0f, 0.7f, 0.85f);
@@ -103,6 +106,9 @@ public class ClickGuiModule extends ToggleModule {
     }
 
     public int getColor1(float alphaMultiplier) {
+        if (!useGradientConfig.getValue()) {
+            return getColor(alphaMultiplier);
+        }
         if (rainbowConfig.getValue()) {
             float hue = (System.currentTimeMillis() % 10000) / 10000f * rainbowSpeedConfig.getValue() + 0.5f;
             Color rainbow = Color.getHSBColor(hue % 1.0f, 0.7f, 0.85f);

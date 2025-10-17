@@ -21,7 +21,6 @@ import net.shoreline.client.init.Managers;
 import net.shoreline.client.init.Modules;
 import net.shoreline.client.util.math.timer.TickTimer;
 import net.shoreline.client.util.math.timer.Timer;
-
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 

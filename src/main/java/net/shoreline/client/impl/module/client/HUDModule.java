@@ -31,7 +31,6 @@ import net.shoreline.client.init.Modules;
 import net.shoreline.client.util.StreamUtils;
 import net.shoreline.client.util.render.ColorUtil;
 import net.shoreline.client.util.string.EnumFormatter;
-
 import java.awt.*;
 import java.text.DecimalFormat;
 import java.util.List;
