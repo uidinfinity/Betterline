@@ -11,7 +11,7 @@ import net.shoreline.client.init.Managers;
  * @since 1.0
  */
 public class PacketEvent extends Event {
-    //
+
     private final Packet<?> packet;
 
     /**

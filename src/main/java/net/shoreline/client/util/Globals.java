@@ -14,6 +14,6 @@ import java.util.concurrent.ThreadLocalRandom;
 public interface Globals {
     // Minecraft game instance
     MinecraftClient mc = MinecraftClient.getInstance();
-    //
+
     Random RANDOM = ThreadLocalRandom.current();
 }

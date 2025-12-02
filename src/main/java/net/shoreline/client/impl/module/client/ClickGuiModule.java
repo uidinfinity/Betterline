@@ -27,7 +27,6 @@ public class ClickGuiModule extends ToggleModule {
     Config<Boolean> rainbowConfig = new BooleanConfig("Rainbow", "Enable animated rainbow colors", false);
     Config<Float> rainbowSpeedConfig = new NumberConfig<>("RainbowSpeed", "Rainbow animation speed", 1.0f, 0.1f, 5.0f);
     Config<Boolean> useGradientConfig = new BooleanConfig("UseGradient", "Enable gradient effect in GUI", true);
-    Config<Boolean> backgroundConfig = new BooleanConfig("Background", "Draw GUI background", true);
     Config<Color> backgroundColorConfig = new ColorConfig("BackgroundColor", "Background color", new Color(0, 0, 0, 100), true, false);
     Config<Integer> disabledHueConfig = new NumberConfig<>("DisabledHue", "Hue for disabled module text", 0, 0, 360);
     Config<Integer> disabledSaturationConfig = new NumberConfig<>("DisabledSaturation", "Saturation for disabled module text", 0, 0, 100);

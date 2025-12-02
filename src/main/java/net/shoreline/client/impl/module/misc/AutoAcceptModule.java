@@ -18,15 +18,12 @@ import net.shoreline.client.util.math.timer.Timer;
  * @since 1.0
  */
 public class AutoAcceptModule extends ToggleModule {
-    //
+
     private final Timer acceptTimer = new CacheTimer();
-    //
+
     Config<Float> delayConfig = new NumberConfig<>("Delay", "The delay before" +
             " accepting teleport requests", 0.0f, 3.0f, 10.0f);
 
-    /**
-     *
-     */
     public AutoAcceptModule() {
         super("AutoAccept", "Automatically accepts teleport requests",
                 ModuleCategory.MISCELLANEOUS);
